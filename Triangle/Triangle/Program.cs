@@ -26,7 +26,6 @@ namespace Triangle
             else
             {
                 return "It is not a Triangle";
-                //Console.WriteLine($" It is not a Triangle ");
             }
         }
     }
