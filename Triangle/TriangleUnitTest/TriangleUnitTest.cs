@@ -8,6 +8,7 @@ namespace TriangleUnitTest
         [TestFixture]
         public class TriangleTest
         {
+            // To check whether the given integers form an Equilateral triangle. 
             [Test]
             public void Analyze_Input3and3and3_Output()
             {
@@ -23,6 +24,8 @@ namespace TriangleUnitTest
                 //Assert
                 Assert.Pass(expectedResult, actualResult);
             }
+
+            // To check whether the given integers form an Isosceles triangle.
             [Test]
             public void Analyze_Input4and4and6_Output()
             {
@@ -38,6 +41,8 @@ namespace TriangleUnitTest
                 //Assert
                 Assert.AreEqual(expectedResult, actualResult);
             }
+
+            // To check whether the given integers form a Scalene triangle.
             [Test]
             public void Analyze_Input4and5and6_Output()
             {
@@ -53,6 +58,8 @@ namespace TriangleUnitTest
                 //Assert
                 Assert.AreEqual(expectedResult, actualResult);
             }
+
+            // To check whether the given integers of value '0' should not form a traingle.
             [Test]
             public void Analyze_Input0and0and6_Output()
             {
@@ -69,6 +76,8 @@ namespace TriangleUnitTest
                 Assert.AreEqual(expectedResult, actualResult);
 
             }
+
+            // To check whether the given integers of negative value should not form a triangle.
             [Test]
             public void  Analyze_Input6and6and6_Output()
             {
@@ -85,13 +94,14 @@ namespace TriangleUnitTest
                 Assert.AreEqual(expectedResult, actualResult);
             }
 
+            // To check whether the given random integers should not form a triangle.
             [Test]
-            public void Analyze_Input6and8and5_Output()
+            public void Analyze_Input100and50and5_Output()
             {
                 //Arrange
-                int a = -6;
-                int b = -8;
-                int c = -5;
+                int a = 100;
+                int b = 50;
+                int c = 5;
                 string expectedResult = "It is not a Triangle";
 
                 //Act
@@ -100,7 +110,26 @@ namespace TriangleUnitTest
                 //Assert
                 Assert.AreEqual(expectedResult, actualResult);
             }
+
+           // To check whether the given combination of both positive and negative integers should not form a triangle.
             [Test]
+            public void Analyze_Input99and008and66_Output()
+            {
+                //Arrange
+                int a = +99;
+                int b = +008;
+                int c = -66;
+                string expectedResult = "It is not a Triangle";
+
+                //Act
+                string actualResult = TriangleSolver.Analyze(a, b, c);
+
+                //Assert
+                Assert.AreEqual(expectedResult, actualResult);
+            }
+
+            // To check whether the given integers starting with '00'should form a triangle of its kind.
+            [Test] 
             public void Analyze_Input005and008and005_Output()
             {
                 //Arrange
@@ -108,21 +137,6 @@ namespace TriangleUnitTest
                 int b = 008;
                 int c = 005;
                 string expectedResult = "It is an Isosceles Triangle";
-
-                //Act
-                string actualResult = TriangleSolver.Analyze(a, b, c);
-
-                //Assert
-                Assert.AreEqual(expectedResult, actualResult);
-            }
-            [Test]
-            public void Analyze_Input008and008and008_Output()
-            {
-                //Arrange
-                int a = -008;
-                int b = -008;
-                int c = -008;
-                string expectedResult = "It is not a Triangle";
 
                 //Act
                 string actualResult = TriangleSolver.Analyze(a, b, c);
