@@ -90,8 +90,38 @@ namespace TriangleUnitTest
             {
                 //Arrange
                 int a = -6;
-                int b = -6;
-                int c = -6;
+                int b = -8;
+                int c = -5;
+                string expectedResult = "It is not a Triangle";
+
+                //Act
+                string actualResult = TriangleSolver.Analyze(a, b, c);
+
+                //Assert
+                Assert.AreEqual(expectedResult, actualResult);
+            }
+            [Test]
+            public void Analyze_Input005and008and005_Output()
+            {
+                //Arrange
+                int a = 005;
+                int b = 008;
+                int c = 005;
+                string expectedResult = "It is an Isosceles Triangle";
+
+                //Act
+                string actualResult = TriangleSolver.Analyze(a, b, c);
+
+                //Assert
+                Assert.AreEqual(expectedResult, actualResult);
+            }
+            [Test]
+            public void Analyze_Input008and008and008_Output()
+            {
+                //Arrange
+                int a = -008;
+                int b = -008;
+                int c = -008;
                 string expectedResult = "It is not a Triangle";
 
                 //Act
