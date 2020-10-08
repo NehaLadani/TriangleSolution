@@ -53,6 +53,53 @@ namespace TriangleUnitTest
                 //Assert
                 Assert.AreEqual(expectedResult, actualResult);
             }
+            [Test]
+            public void Analyze_Input0and0and6_Output()
+            {
+                //Arrange
+                int a = 0;
+                int b = 0;
+                int c = 6;
+                string expectedResult = "It is not a Triangle";
+
+                //Act
+                string actualResult = TriangleSolver.Analyze(a, b, c);
+
+                //Assert
+                Assert.AreEqual(expectedResult, actualResult);
+
+            }
+            [Test]
+            public void  Analyze_Input6and6and6_Output()
+            {
+                //Arrange
+                int a = -6;
+                int b = -6;
+                int c = -6;
+                string expectedResult = "It is not a Triangle";
+
+                //Act
+                string actualResult = TriangleSolver.Analyze(a, b, c);
+
+                //Assert
+                Assert.AreEqual(expectedResult, actualResult);
+            }
+
+            [Test]
+            public void Analyze_Input6and8and5_Output()
+            {
+                //Arrange
+                int a = -6;
+                int b = -6;
+                int c = -6;
+                string expectedResult = "It is not a Triangle";
+
+                //Act
+                string actualResult = TriangleSolver.Analyze(a, b, c);
+
+                //Assert
+                Assert.AreEqual(expectedResult, actualResult);
+            }
 
         }
     }
